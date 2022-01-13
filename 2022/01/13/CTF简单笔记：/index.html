@@ -5,16 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
-    <meta name="description" content="1111111111111111111111111
-11111111111111111111
-1
-1
-1
-1
-1
-1
-1
-">
+    <meta name="description" content="CTF简单笔记：
+远程开启kali桌面命令：sudo /etc/init.d/xrdp start
+CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向工程 ⑤Pwn
+#杂项：
+1、文件操作与隐写
+
+2、">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -451,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-20
+                    2022-01-13
                 </div>
                 
 
@@ -472,15 +469,441 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1111111111111111111111111</p>
-<p>11111111111111111111</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
+                <p><strong>CTF简单笔记：</strong></p>
+<p>远程开启kali桌面命令：sudo /etc/init.d/xrdp start</p>
+<p>CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向工程 ⑤Pwn</p>
+<p>#杂项：</p>
+<pre><code>1、文件操作与隐写
+
+2、图片隐写术
+
+3、压缩文件处理
+
+4、流量取证技术
+
+1
+2
+3
+4
+5
+6
+7
+</code></pre>
+<p>1、文件操作与隐写</p>
+<p>#命令就是一个对应的工具，只是这个工具没有对应的图形化界面而已</p>
+<pre><code>（1）、File：解析文件头
+（2）、winhex：十六进制文件编辑器
+（3）、010edit notepad++  （看头地址的前四个的值判断文件类型）
+
+1
+2
+3
+</code></pre>
+<p>#文件头缺失：</p>
+<p>使用场景 文件头部残缺或文件头部字段错误无法打开正常文件（file 文件名 == Data）</p>
+<p>   使用010edit，修复文件头</p>
+<pre><code>1
+2
+3
+</code></pre>
+<p>#文件分离操作：图片种子 把很多文件融合成一张图片</p>
+<pre><code>分析文件：binwalk 文件名
+分离文件：binwalk -e 文件名  遇到压缩包会进行自动解压
+foremost 文件名 -o 输出目录名
+使用dd实现文件的手动分离
+    格式：dd if=源文件 of=目标文件名 bs=1 count=xx skip=开始分离的字节数
+    参数说明：
+        if=file  #输入文件名，缺省为标准输入
+        of=file  #输出文件名，缺省为标准输出
+        bs=bytes #同时设置读写块的大小为bytes，可以代替ibs和obs
+        skip=blocks #从输入文件开头跳过blocks个块后再开始复制
+        count    #总共要读取count个块
+010edit：选中，右键，select，save selection
+将16进制字符文件导入保存操作方法：010edit：File 中的Import Hexagon另存为....
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</code></pre>
+<p>#文件合并：</p>
+<pre><code>给一个MD5值计算文件的完整性
+1、Linux下的文件合并
+    cat 文件1 文件2 文件3 &gt; 文件.xxx
+    校验文件的md5值：(命令)md5sum 文件名
+2、Windows下的文件合并
+    copy /B 文件1+文件2+文件3  文件.xxx
+    certutil -hashfile 文件 md5
+
+1
+2
+3
+4
+5
+6
+7
+</code></pre>
+<p>#文件内容隐写：</p>
+<pre><code>查找功能
+
+1
+</code></pre>
+<p>2、图片隐写术</p>
+<p>#题型：</p>
+<pre><code>细微的颜色差别
+GIF图多帧隐藏
+    1、颜色通道隐藏
+    2、不同帧图信息隐藏
+    3、不同帧对比隐写
+Exif信息隐藏
+图片修复
+    1、图片头修复
+    2、图片尾修复
+    3、CRC校验修复
+    4、长宽高修复
+最低有效位LSB隐写 8个进制位，将数据藏在最低有效位中
+图片加密
+    1、Stegdetect
+    2、outguess
+    3、Jphide
+    4、F5
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</code></pre>
+<p>#常用工具：</p>
+<p>1、Firework：查看隐写的图片文件<br>2、Exif：打开属性（给提示）Windows<br>        exitfool 文件名 Linux<br>3、Stegsolve（隐写题）：两张图片的信息基本相同<br>    修改打开方式：bin/javaw.exe 修改注册表：HKEY_CLASSES_ROOT\Applications\javaw.exe\shell\open\command   在中间添加 -jar （需要空格）<br>    用来筛选最低有效位 Analyse–&gt;Data Extract–&gt;三基色：RGB<br>4、zsteg需要在线安装（隐写）  root@kali:/# gem install zsteg<br>    detect stegano-hidden data in PNG &amp; BMP<br>    检测LSB隐写   zsteg xxx.png/bmp<br>5、wbstego4工具（最低有效位）：针对.bmp/.pdf<br>    得到的_is文件用notepad++打开<br>6、画图：图片格式转换<br>7、python脚本来处理（图片隐写LSB）<br>8、TweakPNG：文件头正常却无法打开文件，利用TweakPNG修改CRC<br>    1、CRC校验错误<br>    2、高度错误导致CRC错误，需要修改高度.  计算脚本<br>        CRC上一行之后的8个字节，前四个为宽度，后四个为高度（十六进制下的第二行前八位）<br>    如果修改完CRC还没有获得flag，则为高度或者宽度问题，因为高度和宽度的改变引起了<br>    计算出来的CRC不正确，则在运行脚本时候的CRC为原本正确的CRC值<br>9、Bftools：用于解密图片信息<br>    使用场景：在windows的cmd下，对加密过的图片文件进行解密<br>    格式：<br>    Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名<br>    Bftools.exe run 上一步输出的文件<br>10、SlientEye<br>    使用场景：windows下打开silentEye工具，对加密的图片进行解密<br>    方法：使用silentEye程序打开目标图片，点击image-&gt;decode，点击decode,可以查看隐藏文件，点击保存即可<br>    如果需要密码，勾选encrypted data，输入密码和确认密码，再点击decode<br>11、Stegdetect工具探测加密方式：针对jpg<br>    命令：<br>        stegdetect xxx.jpg<br>        stegdetect -s 敏感度 xxx.jpg<br>    1)、Jphide<br>    2)、Outguess<br>        使用场景：Stegdetect识别出来或者题目提示是outguess加密的图片<br>        该工具需编译使用：./configure &amp;&amp; make &amp;&amp; make install<br>        格式：outguess -r 要解密的文件 输出结果的文件名<br>    3)、F5<br>        使用场景：Stegdetect识别出来是F5加密的图片或题目提示是F5加密的图片<br>        进入F5-steganography_F5目录，将图片文件拷贝至该目录下，从CMD进入该目录<br>        格式：Java Exrtact 要解密的文件名 -p 密码<br>        运行结果在目录下的output.txt看到</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</code></pre>
+<p>#二维码处理：</p>
+<pre><code>1、使用二维码扫描工具CQR.exe打开图片，找到内容字段
+2、补全二维码
+3、取反
+
+1
+2
+3
+</code></pre>
+<p>3、压缩文件处理</p>
+<p>#伪加密</p>
+<pre><code>使用场景：伪加密文件
+zip方法：使用winhex打开压缩文件，找到文件头第九第十个字符，将其修改为0000
+        使用winhex打开文件搜索16进制504B0102，可以看到每个加密文件的头文件字段
+rar方法：使用winhex打开rar文件，找到第24个字节，该字节尾数为4表示加密，0表示无加密
+
+1
+2
+3
+4
+</code></pre>
+<p>#暴力破解</p>
+<pre><code>ARCHPR：windows下加密过的rar文件
+ziperello：windows下加密过的zip文件
+
+1
+2
+</code></pre>
+<p>#明文攻击</p>
+<pre><code>使用场景:已知加密的zip?rar部分文件明文内容
+方法：
+    1、将.txt的明文文件进行压缩，变成.zip
+    2、打开archpr，攻击类型选择明文，明文文件路径选择.zip(即将明文文件不加密压缩后的文件)，
+    加密的文件
+    3、选择要破解的文件，点击开始，破解成功后会获得密码
+有时候会跑出加密秘钥
+使用该方法需要注意两个关键点：
+    1、有一个明文文件，压缩后CRC值与加密压缩包中的文件一致
+    2、明文文件的压缩算法需要与加密压缩文件的压缩算法一样（store是默认算法）
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre>
+<p>#RAR文件格式</p>
+<pre><code>有时候给出的RAR文件的头部各个字块会故意给错导致无法识别
+HEAD_CRC   2字节   所有块或块部分的CRC
+HEAD_TYPE  1字节   块类型
+HEAD_FLAGS 2字节   块标记
+HEAD_SIZE  2字节   块大小 #如果快标记的第一位被置1的话，还存在：
+    ADD_SIZE 4字节 可选结构-增加块大小
+那么，文件块的第三个字节为块类型，也叫头类型
+头类型是0x72表示是标记块
+头类型是0x73表示是压缩文件头块
+头类型是0x74表示是文件头块
+头类型是0x75表示是注释快
+……
+怎么看开始，看前面的到哪里结束
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</code></pre>
+<p>4、流量取证技术</p>
+<p>通常比赛中会提供一个包含流量数据的PCAP文件，有时候需要进行修复或重构传输文件后，再进行分析<br>    总体把握：<br>        协议分级<br>        端点统计<br>    过滤筛选<br>        过滤语法<br>        Host，Protocol，contains，特征值<br>    发现异常<br>        特殊字符串<br>        协议某字段<br>        flag位于服务器中<br>    数据提取<br>        字符串取<br>        文件提取<br>    流量分析可以概括为三个方向<br>        1、流量包修复<br>        2、协议分析<br>        3、数据提取</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</code></pre>
+<p>#常用的过滤命令：</p>
+<pre><code>1、过滤IP，如源IP或者目标x.x.x.x
+    ip.src eq x.x.x.x or ip.dst eq x.x.x.x
+2、过滤端口
+    tcp.port eq 80 or udp.port eq 80
+    tcp.dstport == 80 只显tcp协议的目标端口为80
+    tcp.srcport == 80 只显tcp协议的源端口为80
+    tcp.port &gt;= 1 and tcp.port &lt;= 80
+3、过滤协议
+    tcp/udp/arp/icmp/http/ftp/dns/ip……
+4、过滤MAC
+    eth.dst == xx.xx.xx.xx 过滤目标MAC
+5、包长度过滤
+    udp.length == xx 这个长度是指udp本身固定长度8加上udp下面那块数据包之和
+    tcp.len &gt;= 7 指的是ip数据包（tcp下面那块数据），不包括tcp本身
+    ip.len == 94 除了以太网头固定长度14，其他都算是ip.len,即从ip本身到最后
+    frame.len == 119 整个数据包长度，从eth开始到最后
+6、http模式过滤
+    http.request.method == &quot;GET&quot;
+    http.request.method == &quot;POST&quot;
+    http.request.uri == &quot;/img/logo-edu.gif&quot;
+    http contains &quot;GET&quot;
+    http contains &quot;HTTP/1.&quot;
+    http.request.method == &quot;GET&quot; &amp;&amp; http
+    http contains &quot;flag&quot;
+    http contains &quot;key&quot;
+    tcp contains &quot;flag&quot;
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</code></pre>
+<p>#WireShark协议分析：</p>
+<pre><code>英文版：Statistics -&gt; Protocol Hierarchy
+中文版：统计 -&gt; 协议分级
+根据数据包特征进行筛选
+    右键--&gt;作为过滤器应用--&gt;选中
+流汇聚
+    右键--&gt;追踪流--&gt;.... 
+    在关注的http数据包或tcp数据包中选择流汇聚，可以将http流或tcp流汇聚或还原成数据，在弹出的框中可以看到数据内容
+    常见的http流关键内容：
+        1、html中直接包含重要信息
+        2、上传或下载文件内容，通常包含文件名，hash值等关键信息
+    常用POST请求上传
+        3、一句话木马，POST请求，内容包含eval，内容使用base64加密
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</code></pre>
+<p>#数据提取：</p>
+<pre><code>使用wireshark自动提取通过http传输的文件内容
+    文件--&gt;导出对象（wireshark自带的文件分离功能）
+手动提取文件内容
+    右键--&gt;导出分组字节流 或者 点击菜单栏 文件--&gt;导出分组字节流，快捷键ctrl+h
+    在弹出的框中将文件保存成二进制文件
+
+1
+2
+3
+4
+5
+</code></pre>
+<p>#无线wifi流量包：</p>
+<pre><code>kali系统下：aircrack-ng工具进行wifi密码破解
+    1、用aircrack-ng检查cap包：aircrack-ng xxx.cap
+        bssid：MAC地址    ESSID：wifi名字
+    2、用aircrack-ng跑字典进行握手包破解：aircrack-ng xxx.cap -w pass.txt
+
+1
+2
+3
+4
+</code></pre>
+<p>#USB流量：鼠标流量和键盘流量</p>
+<pre><code>键盘流量：    
+    右键leftover capture data --&gt; 应用为列..
+        在数据包中体现，apply as column
+    键盘数据包的数据长度为8个字节，击键信息集中在第3个字节
+    Leftover Capture Data中值与具体按键的对应关系，可以参考
+        http://www.usb.org/developers/hidpage/Hut1_12v2.pdf
+        python脚本
+    提出方式
+        1、文件--&gt;导出分组解析结果--&gt;保存为一个csv文件（表格） 不好用
+        2、使用wireshark提供的命令行工具tshark，可以将Leftover Captuer Data数据单独复制出来
+            tshark -r 流量包的名字 -T fields -e usb.capdata&gt;目的文件名.txt
+鼠标流量：
+    鼠标流量的提取方式和键盘的提取方式相同
+    鼠标数据包的数据长度为4个字节
+    第一个字节代表按键，当取0x00，代表没有按键；为0x01时，代表按左键；为0x02时，代表当前按键为右键
+    第二个字节代表左右偏移
+        当值为正时，代表右移多少像素
+        当值为负时，代表左移多少像素
+    同理，第三个字节代表上下偏移.
+    脚本
+    用gnuplot工具把坐标画出来
+        命令：1、gnuplot
+              2、plot&quot;xy.txt&quot;
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</code></pre>
+<p>脚本：<br><a target="_blank" rel="noopener" href="https://github.com/WangYihang/UsbMiceDataHacker//%E9%BC%A0%E6%A0%87%E6%B5%81%E9%87%8F">https://github.com/WangYihang/UsbMiceDataHacker//鼠标流量</a><br><a target="_blank" rel="noopener" href="https://github.com/WangYihang/UsbKeyboardDataHacker">https://github.com/WangYihang/UsbKeyboardDataHacker</a> //键盘流量<br>摘自王一航的github</p>
+<p>#Https流量包文件分析：</p>
+<pre><code>一般会给key
+导入key  Https == Http + TLS
+英文版：Preference--&gt;Protocols--&gt;SSL--&gt;edit RSA keys list
+中文版：编辑--&gt;首选项--&gt;Protocols--&gt;SSL--&gt;Edit RSA keys list
+</code></pre>
 
                 
             </div>
@@ -507,7 +930,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/20/1111111111111111111111111/">http://example.com/2021/12/20/1111111111111111111111111/</a>
+                    <a href="http://example.com/2022/01/13/CTF%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%EF%BC%9A/">http://example.com/2022/01/13/CTF%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%EF%BC%9A/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -714,9 +1137,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/01/13/CTF%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%EF%BC%9A/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            R1ch029
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/01/12/%E4%BD%BF%E7%94%A8phpstudy%E5%9C%A8windows%E4%B8%8A%E6%90%AD%E5%BB%BAapache%E7%8E%AF%E5%A2%83/">
                     <div class="card-image">
@@ -734,45 +1196,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            R1ch029
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/14/123/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="123">
-                        
-                        <span class="card-title">123</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
                             </span>
                         <span class="publish-author">
                             
