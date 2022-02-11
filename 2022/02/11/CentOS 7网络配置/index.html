@@ -5,8 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
-    <meta name="description" content="burpsuite详细安装教程视频教程：https://www.bilibili.com/video/BV16P4y1P7sL?spm_id_from=333.999.0.0
-java下载链接：https://www.aliyundrive">
+    <meta name="description" content="CentOS 7网络配置
+一般情况下在 VM Ware中安装CentOS都是使用NAT模式连接网络 并且 CentOs安装完是无法上网的 需要手动惊醒配置
+1.在VM Ware中选择“编辑”&amp;gt;”虚拟网络编辑器” 弹出“虚拟网络编辑器弹">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -443,7 +444,7 @@ java下载链接：https://www.aliyundrive">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-24
+                    2022-02-11
                 </div>
                 
 
@@ -464,42 +465,45 @@ java下载链接：https://www.aliyundrive">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="burpsuite详细安装教程"><a href="#burpsuite详细安装教程" class="headerlink" title="burpsuite详细安装教程"></a><strong>burpsuite详细安装教程</strong></h2><p>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16P4y1P7sL?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV16P4y1P7sL?spm_id_from=333.999.0.0</a></p>
-<p>java下载链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/HL5rN7mCydN">https://www.aliyundrive.com/s/HL5rN7mCydN</a></p>
-<p>burpsuite下载链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/JTUS6o8xE2T">https://www.aliyundrive.com/s/JTUS6o8xE2T</a></p>
-<p>1.安装java环境 下载后安装 一直下一步 jdk81u31</p>
-<p>2.测试java环境是否安装成功 cmd下java</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124010845012.png" alt="image-20220124010845012"></p>
-<p>3.找到burp-loader-keygen.jar文件，双击打开，</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-d754bdc9397e607e.png" alt="img"></p>
-<p>填一下License Text(随意)，然后点击Run即可启动BurpSuite的主程序</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-a0585639f3c2a6ca.png" alt="img"></p>
-<p>将keygen中得到的License复制粘贴到这里然后点击Next</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-87341ece85460e12.png" alt="img"></p>
-<p>点击这个后出现下一个界面</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-4c4f3fc949b49f16.png" alt="img"></p>
-<p>点击Copy request，复制完成之后，将字符串粘贴到keygen的Activation Request框里，然后Activation Response框里就有了结果，如下</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-d43cc7288bdf576e.png" alt="img"></p>
-<p>复制完后，将字符串粘贴到BurpSuite剩下的那个框里，如图</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-1a6e5e97856a91c5.png" alt="img"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5698253-1a6e5e97856a91c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/518/format/webp" alt="img"></p>
-<p>再点击Next显示激活成功</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-6c8d0df3724743f9.png" alt="img"></p>
-<p>再次启动burpsuite时直接双击”1.bat”即可</p>
-<p><strong>火狐安装foxyproxy</strong></p>
-<p>点击浏览器右上角三条杠&gt;扩展与主题</p>
-<p>输入框内输入<strong>foxyproxy</strong>搜索</p>
-<p>选择第一个添加 浏览器右上角出现foxyproxy</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012242994.png" alt="image-20220124012242994"></p>
-<p>点击选择 左边添加</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012322620.png" alt="image-20220124012322620"></p>
-<p>设置代理和端口</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012352137.png" alt="image-20220124012352137"></p>
-<p><strong>注意：端口要与burpsuite设置的端口相同</strong></p>
-<p>burpsuite设置端口方式</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012505850.png" alt="image-20220124012505850"></p>
-<p>浏览器挂代理即可进行抓包</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012604531.png" alt="image-20220124012604531"></p>
+                <p><strong>CentOS 7网络配置</strong></p>
+<p>一般情况下在 VM Ware中安装CentOS都是使用NAT模式连接网络 并且 CentOs安装完是无法上网的 需要手动惊醒配置</p>
+<p>1.在VM Ware中选择“编辑”&gt;”虚拟网络编辑器” 弹出“虚拟网络编辑器弹窗” 选择更改设置</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211205806847.png" alt="虚拟网络编辑器"></p>
+<p>选择VMnet8 取消勾选“使用本地DHCP服务讲ip地址分给虚拟机” 子网IP可以自己改 只能第三个 </p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210302839.png"></p>
+<p>选择NAT设置 设置网关 并且记住</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210341814.png"></p>
+<p>2.右击状态栏中的WIFI图标</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210431712.png" alt="WIFI"></p>
+<p>选择“打开网络和internet设置” </p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210551449.png" alt="打开网络和internet设置"></p>
+<p>选择更改适配器选项 弹出“网络连接”对话框</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210720482.png" alt="网络连接"></p>
+<p>选择“VM net8” 点击“属性” 选择“internet 协议版本4(TCP/IPv6)”</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210905742.png" alt="internet 协议版本4(TCP/IPv6)"></p>
+<p>设置为自定义ip</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210950500.png" alt="ip设置"></p>
+<p>3.开启虚拟机 </p>
+<p>输入 ip addr 查看一下网卡信息</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211211316370.png" alt="网卡信息"></p>
+<p>我们要找的是&lt;BROADCAST….&gt;这一个 记住前面的名字 如ens33</p>
+<p>然后修改网卡的信息 输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<p>  后面的ens33根据自己网卡名称来敲（按i键进入输入模式）</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211211739097.png" alt="修改网卡信息"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static</span><br><span class="line"></span><br><span class="line">ONBOOT=yes</span><br><span class="line"></span><br><span class="line">IPADDR=192.168.X.X      //第一个X是网段 第二个X是虚拟机ip</span><br><span class="line"></span><br><span class="line">NETWASK=255.255.255.0</span><br><span class="line"></span><br><span class="line">GATEWAY=192.168.X.X   //如192.168.129.2这里网关要跟前面</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>NAT设置的相同</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210341814.png"></p>
+<p>修改完后按ESC键 再输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+
+<p>保存退出 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>测试一下</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211212639313.png" alt="测试成功"></p>
 
                 
             </div>
@@ -526,7 +530,7 @@ java下载链接：https://www.aliyundrive">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/01/24/burpsuite%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">http://example.com/2022/01/24/burpsuite%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</a>
+                    <a href="http://example.com/2022/02/11/CentOS%207%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">http://example.com/2022/02/11/CentOS%207%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -733,9 +737,10 @@ java下载链接：https://www.aliyundrive">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/11/CentOS%207%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
@@ -753,9 +758,9 @@ java下载链接：https://www.aliyundrive">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -764,6 +769,7 @@ java下载链接：https://www.aliyundrive">
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -774,7 +780,7 @@ java下载链接：https://www.aliyundrive">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/22/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%20web_php_include/">
+                <a href="/2022/01/24/burpsuite%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
                     <div class="card-image">
                         
                         
@@ -791,7 +797,7 @@ java下载链接：https://www.aliyundrive">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-24
                             </span>
                         <span class="publish-author">
                             
