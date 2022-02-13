@@ -5,12 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
-    <meta name="description" content="ubuntu网络配置
-在/etc/netplan目录下查看文件
-
-名称不固定 用vi编辑
-打开后把内容全删掉 
-12345678910network:    ethernets:        ens33:                 ">
+    <meta name="description" content="Google Hacking
+基础篇：
+1234567891011121314* intitle：搜索网页标题中包含有特定字符的网页。例如intitle: 后台，这样网页标题中带有‘后台’的网页都会被搜索出来。* inurl：搜索包含有特定">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -447,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-11
+                    2022-02-13
                 </div>
                 
 
@@ -468,19 +465,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>ubuntu网络配置</strong></p>
-<p>在/etc/netplan目录下查看文件</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211232154043.png"></p>
-<p>名称不固定 用vi编辑</p>
-<p>打开后把内容全删掉 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">    ethernets:</span><br><span class="line">        ens33:                  # 配置的网卡名称</span><br><span class="line">            dhcp4: no           # 关闭dhcp4</span><br><span class="line">            dhcp6: no           # 关闭dhcp6</span><br><span class="line">            addresses: [192.168.0.120/24]       # 设置本机IP地址及掩码</span><br><span class="line">            gateway4: 192.168.0.1               # 设置网关</span><br><span class="line">            nameservers:</span><br><span class="line">                    addresses: [114.114.114.114, 8.8.8.8]       # 设置DNS</span><br><span class="line">    version: 2</span><br></pre></td></tr></table></figure>
+                <p><strong>Google Hacking</strong></p>
+<p>基础篇：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">* intitle：搜索网页标题中包含有特定字符的网页。例如intitle: 后台，这样网页标题中带有‘后台’的网页都会被搜索出来。</span><br><span class="line">* inurl：搜索包含有特定字符的URL。例如inurl:admin，可以用来查找网站后台。</span><br><span class="line">* intext: 搜索网页正文内容中的指定字符，例如intext:操作系统。可以搜索含有‘操作系统’的页面</span><br><span class="line">* Filetype: 搜索指定类型的文件。例如操作系统　filetype:pdf，就可以找到关于操作系统的pdf文档。</span><br><span class="line">* Site：找到与指定网站有联系的URL。例如Site：baidu.com。所有和这个网站有联系的URL都会被显示。</span><br><span class="line">* movie: 当我们用movie提交查询的时候，Google会返回跟查询关键词相关的电影信息。(当前只支持英文Google)</span><br><span class="line">* info: 查询网站的一些信息。例如info:bbs.byr.cn，它只会返回一个结果，是一个选择列表，列表的选项是这个网站的某一方面的信息。info=cache+related+link+site+intext+intitle。</span><br><span class="line">* 双引号: 代表完全匹配，使关键词不分开，顺序都不能变。</span><br><span class="line">* 减号: 减号与前一个关键词之间一定要有一个空格，与后一个关键词之间一定不能有空格。搜索结果为，匹配前一个关键词但不匹配后一个关键词的结果。例如seo -搜索引擎。</span><br><span class="line">* AND: 逻辑与，这个命令我们其实一直都在用，只是没有意识到。一般用空格代替，还可以用“+”代替。例如霹雳布袋+败亡之剑，返回的结果同时包含两者。</span><br><span class="line">* weather: 查询某一地区或城市的天气。不过我们这一地区或城市必须是Google能识别的，例weather:beijing，Google将会给我们返回北京的天气。</span><br><span class="line">* 星号（*）: 通配符，可以匹配任意字符串。例如搜索*擎，则返回的结果中不仅有“搜索引擎”，还有“搜索巨擎”之类的。</span><br><span class="line">* allinurl: 结果的url中包含多个关键词。例如allinurl:byr <span class="built_in">jobs</span>，等于inurl:byr inurl:<span class="built_in">jobs</span>。allinurl也是排他性指令</span><br><span class="line">* define: 查询关键词的词义，起的是字典的作用。Google会返回包含查询关键词定义的网页，例define:computer，支持汉字哦！</span><br></pre></td></tr></table></figure>
 
-<p>编辑好ip和网关后直接粘贴</p>
-<p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netplan apply</span><br></pre></td></tr></table></figure>
-
-<p>重启一下网卡 再ping一下百度即可</p>
-
+<p>进阶</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 查找后台地址：<span class="symbol">site:</span>域名</span><br><span class="line"><span class="symbol">inurl:</span>login<span class="params">|admin|</span>manage<span class="params">|member|</span>admin_login<span class="params">|login_admin|</span>system<span class="params">|login|</span>user<span class="params">|main|</span>cms</span><br><span class="line">* 查找文本内容：<span class="symbol">site:</span>域名 <span class="symbol">intext:</span>管理<span class="params">|后台|</span>登陆<span class="params">|用户名|</span>密码<span class="params">|验证码|</span>系统<span class="params">|帐号|</span>admin<span class="params">|login|</span>sys<span class="params">|managetem|</span>password<span class="params">|username</span></span><br><span class="line"><span class="params">* 查找可注入点：site:域名 inurl:aspx|</span>jsp<span class="params">|php|</span>asp</span><br><span class="line">* 查找上传漏洞：<span class="symbol">site:</span>域名 <span class="symbol">inurl:</span>file<span class="params">|load|</span>editor<span class="params">|Files</span></span><br><span class="line"><span class="params">* 查看脚本类型：site:域名 filetype:asp/aspx/php/jsp</span></span><br><span class="line"><span class="params">* 迂回策略：inurl:cms/data/templates/images/index/</span></span><br><span class="line"><span class="params">* 网络设备关键词：intext:WEB Management Interface <span class="keyword">for</span> H3C SecPath Series</span></span><br><span class="line"><span class="params">* 存在的数据库：site:域名 filetype:mdb|</span>asp<span class="params">|#</span></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -506,7 +496,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/02/11/ubuntu%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">http://example.com/2022/02/11/ubuntu%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</a>
+                    <a href="http://example.com/2022/02/13/Google%20Hacking%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/">http://example.com/2022/02/13/Google%20Hacking%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -713,9 +703,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/13/Google%20Hacking%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
@@ -733,9 +724,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -744,6 +735,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -754,7 +746,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/11/CentOS%207%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
+                <a href="/2022/02/11/ubuntu%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
                         
