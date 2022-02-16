@@ -6,12 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="CTF简单笔记：
-远程开启kali桌面命令：sudo /etc/init.d/xrdp start
+远程开启kali桌面命令：sudo &amp;#x2F;etc&amp;#x2F;init.d&amp;#x2F;xrdp start
 CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向工程 ⑤Pwn
-#杂项：
-1、文件操作与隐写
-
-2、">
+#杂项">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -36,7 +33,7 @@ CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 
@@ -464,13 +461,16 @@ CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><strong>CTF简单笔记：</strong></p>
-<p>远程开启kali桌面命令：sudo /etc/init.d/xrdp start</p>
+<p>远程开启kali桌面命令：sudo &#x2F;etc&#x2F;init.d&#x2F;xrdp start</p>
 <p>CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向工程 ⑤Pwn</p>
 <p>#杂项：</p>
 <pre><code>1、文件操作与隐写
@@ -500,7 +500,7 @@ CTF：①Misc：杂项 ②Crypto：密码安全 ③Web安全 ④Reverse：逆向
 3
 </code></pre>
 <p>#文件头缺失：</p>
-<p>使用场景 文件头部残缺或文件头部字段错误无法打开正常文件（file 文件名 == Data）</p>
+<p>使用场景 文件头部残缺或文件头部字段错误无法打开正常文件（file 文件名 &#x3D;&#x3D; Data）</p>
 <p>   使用010edit，修复文件头</p>
 <pre><code>1
 2
@@ -596,7 +596,7 @@ Exif信息隐藏
 17
 </code></pre>
 <p>#常用工具：</p>
-<p>1、Firework：查看隐写的图片文件<br>2、Exif：打开属性（给提示）Windows<br>        exitfool 文件名 Linux<br>3、Stegsolve（隐写题）：两张图片的信息基本相同<br>    修改打开方式：bin/javaw.exe 修改注册表：HKEY_CLASSES_ROOT\Applications\javaw.exe\shell\open\command   在中间添加 -jar （需要空格）<br>    用来筛选最低有效位 Analyse–&gt;Data Extract–&gt;三基色：RGB<br>4、zsteg需要在线安装（隐写）  root@kali:/# gem install zsteg<br>    detect stegano-hidden data in PNG &amp; BMP<br>    检测LSB隐写   zsteg xxx.png/bmp<br>5、wbstego4工具（最低有效位）：针对.bmp/.pdf<br>    得到的_is文件用notepad++打开<br>6、画图：图片格式转换<br>7、python脚本来处理（图片隐写LSB）<br>8、TweakPNG：文件头正常却无法打开文件，利用TweakPNG修改CRC<br>    1、CRC校验错误<br>    2、高度错误导致CRC错误，需要修改高度.  计算脚本<br>        CRC上一行之后的8个字节，前四个为宽度，后四个为高度（十六进制下的第二行前八位）<br>    如果修改完CRC还没有获得flag，则为高度或者宽度问题，因为高度和宽度的改变引起了<br>    计算出来的CRC不正确，则在运行脚本时候的CRC为原本正确的CRC值<br>9、Bftools：用于解密图片信息<br>    使用场景：在windows的cmd下，对加密过的图片文件进行解密<br>    格式：<br>    Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名<br>    Bftools.exe run 上一步输出的文件<br>10、SlientEye<br>    使用场景：windows下打开silentEye工具，对加密的图片进行解密<br>    方法：使用silentEye程序打开目标图片，点击image-&gt;decode，点击decode,可以查看隐藏文件，点击保存即可<br>    如果需要密码，勾选encrypted data，输入密码和确认密码，再点击decode<br>11、Stegdetect工具探测加密方式：针对jpg<br>    命令：<br>        stegdetect xxx.jpg<br>        stegdetect -s 敏感度 xxx.jpg<br>    1)、Jphide<br>    2)、Outguess<br>        使用场景：Stegdetect识别出来或者题目提示是outguess加密的图片<br>        该工具需编译使用：./configure &amp;&amp; make &amp;&amp; make install<br>        格式：outguess -r 要解密的文件 输出结果的文件名<br>    3)、F5<br>        使用场景：Stegdetect识别出来是F5加密的图片或题目提示是F5加密的图片<br>        进入F5-steganography_F5目录，将图片文件拷贝至该目录下，从CMD进入该目录<br>        格式：Java Exrtact 要解密的文件名 -p 密码<br>        运行结果在目录下的output.txt看到</p>
+<p>1、Firework：查看隐写的图片文件<br>2、Exif：打开属性（给提示）Windows<br>        exitfool 文件名 Linux<br>3、Stegsolve（隐写题）：两张图片的信息基本相同<br>    修改打开方式：bin&#x2F;javaw.exe 修改注册表：HKEY_CLASSES_ROOT\Applications\javaw.exe\shell\open\command   在中间添加 -jar （需要空格）<br>    用来筛选最低有效位 Analyse–&gt;Data Extract–&gt;三基色：RGB<br>4、zsteg需要在线安装（隐写）  root@kali:&#x2F;# gem install zsteg<br>    detect stegano-hidden data in PNG &amp; BMP<br>    检测LSB隐写   zsteg xxx.png&#x2F;bmp<br>5、wbstego4工具（最低有效位）：针对.bmp&#x2F;.pdf<br>    得到的_is文件用notepad++打开<br>6、画图：图片格式转换<br>7、python脚本来处理（图片隐写LSB）<br>8、TweakPNG：文件头正常却无法打开文件，利用TweakPNG修改CRC<br>    1、CRC校验错误<br>    2、高度错误导致CRC错误，需要修改高度.  计算脚本<br>        CRC上一行之后的8个字节，前四个为宽度，后四个为高度（十六进制下的第二行前八位）<br>    如果修改完CRC还没有获得flag，则为高度或者宽度问题，因为高度和宽度的改变引起了<br>    计算出来的CRC不正确，则在运行脚本时候的CRC为原本正确的CRC值<br>9、Bftools：用于解密图片信息<br>    使用场景：在windows的cmd下，对加密过的图片文件进行解密<br>    格式：<br>    Bftools.exe decode braincopter 要解密的图片名称 -output 输出文件名<br>    Bftools.exe run 上一步输出的文件<br>10、SlientEye<br>    使用场景：windows下打开silentEye工具，对加密的图片进行解密<br>    方法：使用silentEye程序打开目标图片，点击image-&gt;decode，点击decode,可以查看隐藏文件，点击保存即可<br>    如果需要密码，勾选encrypted data，输入密码和确认密码，再点击decode<br>11、Stegdetect工具探测加密方式：针对jpg<br>    命令：<br>        stegdetect xxx.jpg<br>        stegdetect -s 敏感度 xxx.jpg<br>    1)、Jphide<br>    2)、Outguess<br>        使用场景：Stegdetect识别出来或者题目提示是outguess加密的图片<br>        该工具需编译使用：.&#x2F;configure &amp;&amp; make &amp;&amp; make install<br>        格式：outguess -r 要解密的文件 输出结果的文件名<br>    3)、F5<br>        使用场景：Stegdetect识别出来是F5加密的图片或题目提示是F5加密的图片<br>        进入F5-steganography_F5目录，将图片文件拷贝至该目录下，从CMD进入该目录<br>        格式：Java Exrtact 要解密的文件名 -p 密码<br>        运行结果在目录下的output.txt看到</p>
 <pre><code>1
 2
 3
@@ -897,7 +897,7 @@ HEAD_SIZE  2字节   块大小 #如果快标记的第一位被置1的话，还�
 22
 23
 </code></pre>
-<p>脚本：<br><a target="_blank" rel="noopener" href="https://github.com/WangYihang/UsbMiceDataHacker//%E9%BC%A0%E6%A0%87%E6%B5%81%E9%87%8F">https://github.com/WangYihang/UsbMiceDataHacker//鼠标流量</a><br><a target="_blank" rel="noopener" href="https://github.com/WangYihang/UsbKeyboardDataHacker">https://github.com/WangYihang/UsbKeyboardDataHacker</a> //键盘流量<br>摘自王一航的github</p>
+<p>脚本：<br><a target="_blank" rel="noopener" href="https://github.com/WangYihang/UsbMiceDataHacker//%E9%BC%A0%E6%A0%87%E6%B5%81%E9%87%8F">https://github.com/WangYihang/UsbMiceDataHacker//鼠标流量</a><br><a target="_blank" rel="noopener" href="https://github.com/WangYihang/UsbKeyboardDataHacker">https://github.com/WangYihang/UsbKeyboardDataHacker</a> &#x2F;&#x2F;键盘流量<br>摘自王一航的github</p>
 <p>#Https流量包文件分析：</p>
 <pre><code>一般会给key
 导入key  Https == Http + TLS

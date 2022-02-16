@@ -32,7 +32,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 
@@ -460,6 +460,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -479,7 +482,7 @@
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210551449.png" alt="打开网络和internet设置"></p>
 <p>选择更改适配器选项 弹出“网络连接”对话框</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210720482.png" alt="网络连接"></p>
-<p>选择“VM net8” 点击“属性” 选择“internet 协议版本4(TCP/IPv6)”</p>
+<p>选择“VM net8” 点击“属性” 选择“internet 协议版本4(TCP&#x2F;IPv6)”</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210905742.png" alt="internet 协议版本4(TCP/IPv6)"></p>
 <p>设置为自定义ip</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210950500.png" alt="ip设置"></p>
@@ -488,19 +491,28 @@
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211211316370.png" alt="网卡信息"></p>
 <p>我们要找的是&lt;BROADCAST….&gt;这一个 记住前面的名字 如ens33</p>
 <p>然后修改网卡的信息 输入命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>  后面的ens33根据自己网卡名称来敲（按i键进入输入模式）</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211211739097.png" alt="修改网卡信息"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static</span><br><span class="line"></span><br><span class="line">ONBOOT=yes</span><br><span class="line"></span><br><span class="line">IPADDR=192.168.X.X      //第一个X是网段 第二个X是虚拟机ip</span><br><span class="line"></span><br><span class="line">NETWASK=255.255.255.0</span><br><span class="line"></span><br><span class="line">GATEWAY=192.168.X.X   //如192.168.129.2这里网关要跟前面</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">BOOTPROTO&#x3D;static
+
+ONBOOT&#x3D;yes
+
+IPADDR&#x3D;192.168.X.X      &#x2F;&#x2F;第一个X是网段 第二个X是虚拟机ip
+
+NETWASK&#x3D;255.255.255.0
+
+GATEWAY&#x3D;192.168.X.X   &#x2F;&#x2F;如192.168.129.2这里网关要跟前面
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>NAT设置的相同</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210341814.png"></p>
 <p>修改完后按ESC键 再输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">:wq<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>保存退出 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>测试一下</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211212639313.png" alt="测试成功"></p>

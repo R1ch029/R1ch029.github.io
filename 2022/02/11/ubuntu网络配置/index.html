@@ -6,11 +6,13 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="ubuntu网络配置
-在/etc/netplan目录下查看文件
+在&amp;#x2F;etc&amp;#x2F;netplan目录下查看文件
 
 名称不固定 用vi编辑
 打开后把内容全删掉 
-12345678910network:    ethernets:        ens33:                 ">
+network:
+    ethernets:
+        ens33:                ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +37,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.1"></head>
 
 
 
@@ -463,21 +465,33 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><strong>ubuntu网络配置</strong></p>
-<p>在/etc/netplan目录下查看文件</p>
+<p>在&#x2F;etc&#x2F;netplan目录下查看文件</p>
 <p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211232154043.png"></p>
 <p>名称不固定 用vi编辑</p>
 <p>打开后把内容全删掉 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">    ethernets:</span><br><span class="line">        ens33:                  # 配置的网卡名称</span><br><span class="line">            dhcp4: no           # 关闭dhcp4</span><br><span class="line">            dhcp6: no           # 关闭dhcp6</span><br><span class="line">            addresses: [192.168.0.120/24]       # 设置本机IP地址及掩码</span><br><span class="line">            gateway4: 192.168.0.1               # 设置网关</span><br><span class="line">            nameservers:</span><br><span class="line">                    addresses: [114.114.114.114, 8.8.8.8]       # 设置DNS</span><br><span class="line">    version: 2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">network:
+    ethernets:
+        ens33:                  # 配置的网卡名称
+            dhcp4: no           # 关闭dhcp4
+            dhcp6: no           # 关闭dhcp6
+            addresses: [192.168.0.120&#x2F;24]       # 设置本机IP地址及掩码
+            gateway4: 192.168.0.1               # 设置网关
+            nameservers:
+                    addresses: [114.114.114.114, 8.8.8.8]       # 设置DNS
+    version: 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>编辑好ip和网关后直接粘贴</p>
 <p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netplan apply</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">netplan apply<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>重启一下网卡 再ping一下百度即可</p>
 
