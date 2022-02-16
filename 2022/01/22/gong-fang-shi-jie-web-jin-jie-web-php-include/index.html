@@ -5,8 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
-    <meta name="description" content="Google Hacking基础篇：* intitle：搜索网页标题中包含有特定字符的网页。例如intitle: 后台，这样网页标题中带有‘后台’的网页都会被搜索出来。
-* inurl：搜索包含有特定字符的URL。例如inurl:admin">
+    <meta name="description" content="攻防世界web进阶 web_php_include
+进入题目
+
+一串简短的PHP代码，这里对page这个参数用str_replace函数进行了过滤，str_replace函数的作用是匹配前面一段字符，匹配到的话就替换成后面一段，所以这里的代">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -443,17 +445,37 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-01-22
                 </div>
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-01-22
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    359
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -467,32 +489,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Google-Hacking"><a href="#Google-Hacking" class="headerlink" title="Google Hacking"></a><strong>Google Hacking</strong></h1><h3 id="基础篇："><a href="#基础篇：" class="headerlink" title="基础篇："></a>基础篇：</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">* intitle：搜索网页标题中包含有特定字符的网页。例如intitle: 后台，这样网页标题中带有‘后台’的网页都会被搜索出来。
-* inurl：搜索包含有特定字符的URL。例如inurl:admin，可以用来查找网站后台。
-* intext: 搜索网页正文内容中的指定字符，例如intext:操作系统。可以搜索含有‘操作系统’的页面
-* Filetype: 搜索指定类型的文件。例如操作系统　filetype:pdf，就可以找到关于操作系统的pdf文档。
-* Site：找到与指定网站有联系的URL。例如Site：baidu.com。所有和这个网站有联系的URL都会被显示。
-* movie: 当我们用movie提交查询的时候，Google会返回跟查询关键词相关的电影信息。<span class="token punctuation">(</span>当前只支持英文Google<span class="token punctuation">)</span>
-* info: 查询网站的一些信息。例如info:bbs.byr.cn，它只会返回一个结果，是一个选择列表，列表的选项是这个网站的某一方面的信息。info<span class="token operator">=</span>cache+related+link+site+intext+intitle。
-* 双引号: 代表完全匹配，使关键词不分开，顺序都不能变。
-* 减号: 减号与前一个关键词之间一定要有一个空格，与后一个关键词之间一定不能有空格。搜索结果为，匹配前一个关键词但不匹配后一个关键词的结果。例如seo -搜索引擎。
-* AND: 逻辑与，这个命令我们其实一直都在用，只是没有意识到。一般用空格代替，还可以用“+”代替。例如霹雳布袋+败亡之剑，返回的结果同时包含两者。
-* weather: 查询某一地区或城市的天气。不过我们这一地区或城市必须是Google能识别的，例weather:beijing，Google将会给我们返回北京的天气。
-* 星号（*）: 通配符，可以匹配任意字符串。例如搜索*擎，则返回的结果中不仅有“搜索引擎”，还有“搜索巨擎”之类的。
-* allinurl: 结果的url中包含多个关键词。例如allinurl:byr jobs，等于inurl:byr inurl:jobs。allinurl也是排他性指令
-* define: 查询关键词的词义，起的是字典的作用。Google会返回包含查询关键词定义的网页，例define:computer，支持汉字哦！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p>攻防世界web进阶 web_php_include</p>
+<p>进入题目</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707163923303.png" alt="img"></p>
+<p>一串简短的PHP代码，这里对page这个参数用str_replace函数进行了过滤，str_replace函数的作用是匹配前面一段字符，匹配到的话就替换成后面一段，所以这里的代码意思就是，假如我们传入的page参数包含php:&#x2F;&#x2F;就会被替换成空字符。并且判断page里面文件是否存在，存在则包含文件。</p>
+<p>当然这题有多种解法，我这里就讲述三种。</p>
+<p>第一种</p>
+<p>绕过str_replace函数，对渗透测试有点了解的都知道str_replace这个函数及其不安全，可以利用大小写绕过，双写绕过等，这里我用大小写绕过演示给大家看看。</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707165806928.png" alt="img"></p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707165913410.png" alt="img"> </p>
+<p>即可得到flag。</p>
+<p>第二种</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707170147415.png" alt="img"></p>
+<p>这里还传入了一个hello，好奇心让我试了试。</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707170249180.png" alt="img"></p>
+<p>我发现这个hello是有回显的，所以说不定这里可以命令执行然后回显到浏览器。</p>
+<p>然后我们构造payload，首先要构造hello这个参数我们必须先让我们传进的page参数为真才行。</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707171018153.png" alt="img"></p>
+<p>让page参数用http伪协议访问127.0.0.1这个条件肯定为真</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707171441508.png" alt="img"></p>
+<p>第三种</p>
+<p>用御剑扫描后台，会扫到phpmyadmin</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707171629347.png" alt="img"></p>
+<p>试了试弱口令，账号root密码空还真登入进去了</p>
+<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/20200707171732965.png" alt="img"></p>
+<p>接下来就是写入一句话了，这个自行百度了。</p>
 
-<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶:"></a>进阶:</h3><pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token operator">*</span> 查找后台地址：site<span class="token punctuation">:</span>域名
-inurl<span class="token symbol">:login</span><span class="token operator">|</span>admin<span class="token operator">|</span>manage<span class="token operator">|</span>member<span class="token operator">|</span>admin_login<span class="token operator">|</span>login_admin<span class="token operator">|</span>system<span class="token operator">|</span>login<span class="token operator">|</span>user<span class="token operator">|</span>main<span class="token operator">|</span>cms
-<span class="token operator">*</span> 查找文本内容：site<span class="token punctuation">:</span>域名 intext<span class="token punctuation">:</span>管理<span class="token operator">|</span>后台<span class="token operator">|</span>登陆<span class="token operator">|</span>用户名<span class="token operator">|</span>密码<span class="token operator">|</span>验证码<span class="token operator">|</span>系统<span class="token operator">|</span>帐号<span class="token operator">|</span>admin<span class="token operator">|</span>login<span class="token operator">|</span>sys<span class="token operator">|</span>managetem<span class="token operator">|</span>password<span class="token operator">|</span>username
-<span class="token operator">*</span> 查找可注入点：site<span class="token punctuation">:</span>域名 inurl<span class="token symbol">:aspx</span><span class="token operator">|</span>jsp<span class="token operator">|</span>php<span class="token operator">|</span>asp
-<span class="token operator">*</span> 查找上传漏洞：site<span class="token punctuation">:</span>域名 inurl<span class="token symbol">:file</span><span class="token operator">|</span>load<span class="token operator">|</span>editor<span class="token operator">|</span><span class="token constant">Files</span>
-<span class="token operator">*</span> 查看脚本类型：site<span class="token punctuation">:</span>域名 filetype<span class="token symbol">:asp</span><span class="token operator">/</span>aspx<span class="token operator">/</span>php<span class="token operator">/</span>jsp
-<span class="token operator">*</span> 迂回策略：inurl<span class="token symbol">:cms</span><span class="token operator">/</span>data<span class="token operator">/</span>templates<span class="token operator">/</span>images<span class="token regex">/index/</span>
-<span class="token operator">*</span> 网络设备关键词：intext<span class="token symbol">:WEB</span> <span class="token constant">Management</span> <span class="token constant">Interface</span> <span class="token keyword">for</span> <span class="token constant">H3C</span> <span class="token constant">SecPath</span> <span class="token constant">Series</span>
-<span class="token operator">*</span> 存在的数据库：site<span class="token punctuation">:</span>域名 filetype<span class="token symbol">:mdb</span><span class="token operator">|</span>asp<span class="token operator">|</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">使用 &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Alt&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Del&lt;&#x2F;kbd&gt; 重启电脑<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -518,7 +540,7 @@ inurl<span class="token symbol">:login</span><span class="token operator">|</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/02/13/Google%20Hacking%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/">http://example.com/2022/02/13/Google%20Hacking%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/</a>
+                    <a href="http://example.com/2022/01/22/gong-fang-shi-jie-web-jin-jie-web-php-include/">http://example.com/2022/01/22/gong-fang-shi-jie-web-jin-jie-web-php-include/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -729,7 +751,7 @@ inurl<span class="token symbol">:login</span><span class="token operator">|</spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/14/awd%20docker%20GitHub%20-%20glzjin20190511_awd_docker%202019%20%E5%B9%B4%205%20%E6%9C%88%2011%20%E6%97%A5%E9%98%B2%E7%81%BE%E7%A7%91%E6%8A%80%E5%AD%A6%E9%99%A2%20%E2%80%9C%E5%BA%94%E6%80%A5%E6%8C%91%E6%88%98%E6%9D%AF%E2%80%9D%20%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%82%80%E8%AF%B7%E8%B5%9B%20AWD%20%E9%9D%B6%E6%9C%BA%E9%A2%98%E7%9B%AE%E3%80%82/">
+                <a href="/2022/01/24/burpsuite-xiang-xi-an-zhuang-jiao-cheng/">
                     <div class="card-image">
                         
                         
@@ -746,7 +768,7 @@ inurl<span class="token symbol">:login</span><span class="token operator">|</spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-24
                         </span>
                         <span class="publish-author">
                             
@@ -766,7 +788,7 @@ inurl<span class="token symbol">:login</span><span class="token operator">|</spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/11/ubuntu%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
+                <a href="/2022/01/20/gong-fang-shi-jie-tang-mu-you-ge-hao-zhu-yi/">
                     <div class="card-image">
                         
                         
@@ -783,7 +805,7 @@ inurl<span class="token symbol">:login</span><span class="token operator">|</spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-20
                             </span>
                         <span class="publish-author">
                             
@@ -991,6 +1013,9 @@ inurl<span class="token symbol">:login</span><span class="token operator">|</spa
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">5.4k</span>
             
             
             
