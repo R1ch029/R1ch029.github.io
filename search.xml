@@ -57,19 +57,6 @@
     
     <entry>
       <title></title>
-      <link href="/2022/01/24/burpsuite-xiang-xi-an-zhuang-jiao-cheng/"/>
-      <url>/2022/01/24/burpsuite-xiang-xi-an-zhuang-jiao-cheng/</url>
-      
-        <content type="html"><![CDATA[<h2 id="burpsuite详细安装教程"><a href="#burpsuite详细安装教程" class="headerlink" title="burpsuite详细安装教程"></a><strong>burpsuite详细安装教程</strong></h2><p>视频教程：<a href="https://www.bilibili.com/video/BV16P4y1P7sL?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV16P4y1P7sL?spm_id_from=333.999.0.0</a></p><p>java下载链接：<a href="https://www.aliyundrive.com/s/HL5rN7mCydN">https://www.aliyundrive.com/s/HL5rN7mCydN</a></p><p>burpsuite下载链接：<a href="https://www.aliyundrive.com/s/JTUS6o8xE2T">https://www.aliyundrive.com/s/JTUS6o8xE2T</a></p><p>1.安装java环境 下载后安装 一直下一步 jdk81u31</p><p>2.测试java环境是否安装成功 cmd下java</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124010845012.png" alt="image-20220124010845012"></p><p>3.找到burp-loader-keygen.jar文件，双击打开，</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-d754bdc9397e607e.png" alt="img"></p><p>填一下License Text(随意)，然后点击Run即可启动BurpSuite的主程序</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-a0585639f3c2a6ca.png" alt="img"></p><p>将keygen中得到的License复制粘贴到这里然后点击Next</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-87341ece85460e12.png" alt="img"></p><p>点击这个后出现下一个界面</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-4c4f3fc949b49f16.png" alt="img"></p><p>点击Copy request，复制完成之后，将字符串粘贴到keygen的Activation Request框里，然后Activation Response框里就有了结果，如下</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-d43cc7288bdf576e.png" alt="img"></p><p>复制完后，将字符串粘贴到BurpSuite剩下的那个框里，如图</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-1a6e5e97856a91c5.png" alt="img"></p><p><img src="https://upload-images.jianshu.io/upload_images/5698253-1a6e5e97856a91c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/518/format/webp" alt="img"></p><p>再点击Next显示激活成功</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/5698253-6c8d0df3724743f9.png" alt="img"></p><p>再次启动burpsuite时直接双击”1.bat”即可</p><p><strong>火狐安装foxyproxy</strong></p><p>点击浏览器右上角三条杠&gt;扩展与主题</p><p>输入框内输入<strong>foxyproxy</strong>搜索</p><p>选择第一个添加 浏览器右上角出现foxyproxy</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012242994.png" alt="image-20220124012242994"></p><p>点击选择 左边添加</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012322620.png" alt="image-20220124012322620"></p><p>设置代理和端口</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012352137.png" alt="image-20220124012352137"></p><p><strong>注意：端口要与burpsuite设置的端口相同</strong></p><p>burpsuite设置端口方式</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012505850.png" alt="image-20220124012505850"></p><p>浏览器挂代理即可进行抓包</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220124012604531.png" alt="image-20220124012604531"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/2022/01/22/gong-fang-shi-jie-web-jin-jie-web-php-include/"/>
       <url>/2022/01/22/gong-fang-shi-jie-web-jin-jie-web-php-include/</url>
       
