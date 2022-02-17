@@ -149,7 +149,34 @@
       
         <tags>
             
+            <tag> 攻防世界 </tag>
+            
             <tag> Web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>攻防世界-汤姆有个好主意</title>
+      <link href="/2022/01/20/gong-fang-shi-jie-tang-mu-you-ge-hao-zhu-yi/"/>
+      <url>/2022/01/20/gong-fang-shi-jie-tang-mu-you-ge-hao-zhu-yi/</url>
+      
+        <content type="html"><![CDATA[<p>下载是张图片 拖到kali里面binwalk发现有不少文件</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120211750320.png"></p><p>然后foremost -T 文件名</p><p>得到一个压缩包 拖到windows中解压 有个hint提示跟两张一样的图片</p><p>hint翻译过来是<img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120211947223.png"></p><p>找像素 那能想到的就合并 </p><p>steg.jar</p><p>合并完了</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120212144431.png"></p><p>save 用ps打开 把曝光拉到最大 得到二维码</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120212225497.png"></p><p>得到flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Write UP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Misc </tag>
             
             <tag> 攻防世界 </tag>
             
@@ -179,33 +206,6 @@
             <tag> 攻防世界 </tag>
             
             <tag> misc </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>攻防世界-汤姆有个好主意</title>
-      <link href="/2022/01/20/gong-fang-shi-jie-tang-mu-you-ge-hao-zhu-yi/"/>
-      <url>/2022/01/20/gong-fang-shi-jie-tang-mu-you-ge-hao-zhu-yi/</url>
-      
-        <content type="html"><![CDATA[<p>下载是张图片 拖到kali里面binwalk发现有不少文件</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120211750320.png"></p><p>然后foremost -T 文件名</p><p>得到一个压缩包 拖到windows中解压 有个hint提示跟两张一样的图片</p><p>hint翻译过来是<img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120211947223.png"></p><p>找像素 那能想到的就合并 </p><p>steg.jar</p><p>合并完了</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120212144431.png"></p><p>save 用ps打开 把曝光拉到最大 得到二维码</p><p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220120212225497.png"></p><p>得到flag</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Write UP </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 攻防世界 </tag>
-            
-            <tag> Misc </tag>
             
         </tags>
       
