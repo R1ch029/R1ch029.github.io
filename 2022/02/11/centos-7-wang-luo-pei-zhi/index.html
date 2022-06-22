@@ -368,7 +368,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-17
+                    2022-03-28
                 </div>
                 
 
@@ -407,30 +407,30 @@
             <div id="articleContent">
                 <p>一般情况下在 VM Ware中安装CentOS都是使用NAT模式连接网络 并且 CentOs安装完是无法上网的 需要手动惊醒配置</p>
 <p>1.在VM Ware中选择“编辑”&gt;”虚拟网络编辑器” 弹出“虚拟网络编辑器弹窗” 选择更改设置</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211205806847.png" alt="虚拟网络编辑器"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211205806847.png" alt="虚拟网络编辑器"></p>
 <p>选择VMnet8 取消勾选“使用本地DHCP服务讲ip地址分给虚拟机” 子网IP可以自己改 只能第三个 </p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210302839.png"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210302839.png"></p>
 <p>选择NAT设置 设置网关 并且记住</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210341814.png"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210341814.png"></p>
 <p>2.右击状态栏中的WIFI图标</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210431712.png" alt="WIFI"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210431712.png" alt="WIFI"></p>
 <p>选择“打开网络和internet设置” </p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210551449.png" alt="打开网络和internet设置"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210551449.png" alt="打开网络和internet设置"></p>
 <p>选择更改适配器选项 弹出“网络连接”对话框</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210720482.png" alt="网络连接"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210720482.png" alt="网络连接"></p>
 <p>选择“VM net8” 点击“属性” 选择“internet 协议版本4(TCP&#x2F;IPv6)”</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210905742.png" alt="internet 协议版本4(TCP/IPv6)"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210905742.png" alt="internet 协议版本4(TCP/IPv6)"></p>
 <p>设置为自定义ip</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210950500.png" alt="ip设置"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210950500.png" alt="ip设置"></p>
 <p>3.开启虚拟机 </p>
 <p>输入 ip addr 查看一下网卡信息</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211211316370.png" alt="网卡信息"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211211316370.png" alt="网卡信息"></p>
 <p>我们要找的是&lt;BROADCAST….&gt;这一个 记住前面的名字 如ens33</p>
 <p>然后修改网卡的信息 输入命令</p>
 <pre class="line-numbers language-none"><code class="language-none">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>  后面的ens33根据自己网卡名称来敲（按i键进入输入模式）</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211211739097.png" alt="修改网卡信息"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211211739097.png" alt="修改网卡信息"></p>
 <pre class="line-numbers language-none"><code class="language-none">BOOTPROTO&#x3D;static
 
 ONBOOT&#x3D;yes
@@ -443,7 +443,7 @@ GATEWAY&#x3D;192.168.X.X   &#x2F;&#x2F;如192.168.129.2这里网关要跟前面
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>NAT设置的相同</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211210341814.png"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211210341814.png"></p>
 <p>修改完后按ESC键 再输入</p>
 <pre class="line-numbers language-none"><code class="language-none">:wq<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -451,7 +451,7 @@ GATEWAY&#x3D;192.168.X.X   &#x2F;&#x2F;如192.168.129.2这里网关要跟前面
 <pre class="line-numbers language-none"><code class="language-none">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>测试一下</p>
-<p><img src="https://gitee.com/r1ch029/abc/raw/master/img/image-20220211212639313.png" alt="测试成功"></p>
+<p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/img/image-20220211212639313.png" alt="测试成功"></p>
 
                 
             </div>
@@ -837,7 +837,7 @@ GATEWAY&#x3D;192.168.X.X   &#x2F;&#x2F;如192.168.129.2这里网关要跟前面
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.3k</span>
+                        class="white-color">38.7k</span>
             
             
             
