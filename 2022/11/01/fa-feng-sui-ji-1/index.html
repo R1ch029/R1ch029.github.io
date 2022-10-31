@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="POC bomber-用于渗透和红队快速打点的漏洞检测工具, null">
-    <meta name="description" content="我爱做脚本小子">
+    <meta name="keywords" content="发疯随记2022/11/1凌晨, null">
+    <meta name="description" content="发疯 随便写">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>POC bomber-用于渗透和红队快速打点的漏洞检测工具 | null</title>
+    <title>发疯随记2022/11/1凌晨 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">POC bomber-用于渗透和红队快速打点的漏洞检测工具</h1>
+                    <h1 class="description center-align post-title">发疯随记2022/11/1凌晨</h1>
                 </div>
             </div>
         </div>
@@ -428,13 +428,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/POC-bomber/">
-                                <span class="chip bg-color">POC bomber</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -442,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/POC-bomber/" class="post-category">
-                                POC bomber
+                            <a href="/categories/R1ch029/" class="post-category">
+                                R1ch029
                             </a>
                         
                     </div>
@@ -455,21 +451,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-12
+                    2022-11-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-12
+                    2022-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    673
+                    621
                 </div>
                 
 
@@ -499,45 +495,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="相关地址"><a href="#相关地址" class="headerlink" title="相关地址"></a>相关地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/tr0uble-mAker/POC-bomber">https://github.com/tr0uble-mAker/POC-bomber</a></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h2><p>POC bomber的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，thinkphp2x3x5x，spring，redis，jenkins，php语言漏洞，shiro，泛微OA，致远OA，通达OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序采用高并发线程池，支持自定义导入poc&#x2F;exp，并能够生成漏洞报告</p>
-<p>POC bomber默认使用验证模式进行poc的验证，如果在返回结果中看到attack的值为True，可以加参数(–attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h2><pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;tr0uble-mAker&#x2F;POC-bomber.git            
-cd POC-bomber
-pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a><strong>用法</strong></h2><pre class="line-numbers language-none"><code class="language-none">
-查看用法: python3 pocbomber.py
-
-模式:
-      获取poc&#x2F;exp信息:   python3 pocbomber.py --show
-      单目标检测:        python3 pocbomber.py -u http:&#x2F;&#x2F;xxx.xxx.xx
-      批量检测:          python3 pocbomber.py -f url.txt -o report.txt 
-      指定poc检测:       python3 pocbomber.py -f url.txt --poc&#x3D;&quot;thinkphp2_rce.py&quot;
-      exp攻击模式:       python3 pocbomber.py -u 目标url --poc&#x3D;&quot;指定poc文件&quot; --attack
-参数:
-      -u  --url      目标url
-      -f  --file     指定目标url文件   
-      -o  --output   指定生成报告的文件(默认不生成报告)
-      -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
-      -t  --thread   指定线程池最大并发数量(默认300)
-      --show         展示poc&#x2F;exp详细信息
-      --attack       使用poc文件中的exp进行攻击
-      --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a><strong>配置文件</strong></h2><pre class="line-numbers language-none"><code class="language-none">&#x2F;inc&#x2F;config.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="验证模式"><a href="#验证模式" class="headerlink" title="验证模式"></a><strong>验证模式</strong></h2><pre class="line-numbers language-none"><code class="language-none">python3 pocbomber.py -u http:&#x2F;&#x2F;xxx.xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="攻击模式"><a href="#攻击模式" class="headerlink" title="攻击模式"></a><strong>攻击模式</strong></h2><pre class="line-numbers language-none"><code class="language-none">python3 pocbomber.py -u http:&#x2F;&#x2F;xxx.xxx --poc&#x3D;&quot;thinkphp2_rce.py&quot; --attack<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a><strong>常见问题</strong></h2><ol>
-<li>程序不安装requirements.txt就可以直接运行，只依赖requests第三方库，其他库安装不上不影响程序运行，但有些poc会不能检测</li>
-<li>Shiro的反序列化漏洞的检测(&#x2F;pocs&#x2F;framework&#x2F;shiro): 依赖python3第三方库 pycryptodome 可以尝试先pip uninstall crypto pycryptodome ，再 pip install pycryptodome，不安装库的话默认检测不出shiro反序列, 安装完库如果检测不成功或者出错请检查 &#x2F;pocs&#x2F;framework&#x2F;shiro&#x2F;ysoserial-0.0.6-SNAPSHOT-all.jar 是否完整的下载</li>
-<li>log4j2命令执行漏洞的检测：需要添加 –dnslog 参数</li>
-<li>无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True</li>
-<li>需要指定一个poc才能调用–attack攻击模式</li>
-</ol>
+                <h2 id="发疯随记"><a href="#发疯随记" class="headerlink" title="发疯随记"></a>发疯随记</h2><p>世界上一切都是假的 都是身体的器官产生的感受 传递给了大脑 </p>
+<p>每一个 我们看到的 听到的 信仰的 希望的</p>
+<p>钱  权      天 地</p>
+<p>像一个无聊的“神”创造出来的</p>
+<p>一个充满bug的程序</p>
+<p>一群npc不断的轮回</p>
+<p>这次是草 下次是树 然后是狗 又成了人</p>
+<p>我们在“神”创造出来的运行法则里 不断的争斗</p>
+<p>“神”在一旁静静的观察 感到乐趣</p>
+<p>既然干干净净来 干干净净走 为什么不停下来去好好感受 去思考</p>
+<p>陪伴家人 感受“生活” </p>
+<p>能吃饱就行 能穿暖就行</p>
+<p>为什么要跳入富人创造出的概念陷阱里面</p>
+<p>比如 市中心的房子 bba车子 大牌奢饰品</p>
+<p>活着就是为了活着 顺便体验一下 </p>
+<p>存在的意义是什么</p>
+<p>想得到 想观看 想欣赏 一切</p>
+<p>哪一个不是需要用到你口袋的money</p>
+<p>制造欲望 让我们拼命打工 赚钱 花钱</p>
+<p>“苦”读二十余载 目的就是跟everyone去竞争</p>
+<p>去抢上一个阶层的人 “施舍”给我们的职位</p>
+<p>然后拿着只够温饱的工资 去舔着脸跟父辈要来他们一辈子体力换来可怜的存款</p>
+<p>买房子 车子 结婚生子 重复着父辈们走过的路</p>
+<p>还着30年的房贷</p>
+<p>老了把攒下的钱留给孩子</p>
+<p>能剩下就治病  治不好下辈子重来一遍</p>
+<p>后代重复着一摸一样的故事情节</p>
+<p>忙忙碌碌为了什么</p>
+<p>为了造价几十万卖几百万的房子?</p>
+<p>为了所谓孩子享受更好的教育？</p>
+<p>为了高人一等？</p>
+<p>为了不蒸馒头争口气？</p>
+<p>可 文学 艺术 娱乐 等等一切</p>
+<p>所以我们存在的意义是什么</p>
+<p>我们存在到底是真的还是假的</p>
+<p>是我的大脑处理出来的感觉</p>
+<p>让我感受到活着 感受到痛苦 感受到压力</p>
+<p>既然觉醒 那为什么不一步到位</p>
+<p>跳出轮回 感受存在 又不存在 的感觉</p>
+<p>逃离苦难</p>
+<hr>
+<p>历时一小时左右吧 现在是1：47</p>
+<p>在写这些乱七八糟的东西的时候</p>
+<p>大脑一阵阵的空白</p>
+<p>不知道是不是意识到我要摆脱它的控制</p>
+<p>背后也一直的发凉</p>
+<p>可能11月的天越来越冷了吧</p>
 
                 
             </div>
@@ -564,7 +568,7 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://R1ch029.cf/2022/04/12/2022-04-12-poc-bomber-yong-yu-shen-tou-he-hong-dui-kuai-su-da-dian-de-lou-dong-jian-ce-gong-ju/">http://R1ch029.cf/2022/04/12/2022-04-12-poc-bomber-yong-yu-shen-tou-he-hong-dui-kuai-su-da-dian-de-lou-dong-jian-ce-gong-ju/</a>
+                    <a href="http://R1ch029.cf/2022/11/01/fa-feng-sui-ji-1/">http://R1ch029.cf/2022/11/01/fa-feng-sui-ji-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,11 +605,7 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/POC-bomber/">
-                                    <span class="chip bg-color">POC bomber</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -775,53 +775,43 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/30/2022-04-30-da-jian-vulfocus-lou-dong-ba-chang/">
+                <a href="/2022/11/01/fa-feng-sui-ji-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="搭建vulfocus漏洞靶场">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="发疯随记2022/11/1凌晨">
                         
-                        <span class="card-title">搭建vulfocus漏洞靶场</span>
+                        <span class="card-title">发疯随记2022/11/1凌晨</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            乱糟糟的，先传上来吧
+                            发疯 随便写
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    搭建
+                            <a href="/categories/R1ch029/" class="post-category">
+                                    R1ch029
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9D%B6%E5%9C%BA/">
-                        <span class="chip bg-color">靶场</span>
-                    </a>
-                    
-                    <a href="/tags/vulfocus/">
-                        <span class="chip bg-color">vulfocus</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -832,31 +822,31 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/02/2022-04-02-hu-wang-mian-shi-ti-mu/">
+                <a href="/2022/06/26/2022-06-26-ctfshow-bao-po-shua-ti-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="护网面试题目">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="ctfshow爆破刷题记录">
                         
-                        <span class="card-title">护网面试题目</span>
+                        <span class="card-title">ctfshow爆破刷题记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            护网面试资料整理
+                            毕业了 放假了11
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%A4%E7%BD%91/" class="post-category">
-                                    护网
+                            <a href="/categories/ctfshow/" class="post-category">
+                                    ctfshow
                                 </a>
                             
                             
@@ -866,12 +856,12 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8A%A4%E7%BD%91/">
-                        <span class="chip bg-color">护网</span>
+                    <a href="/tags/ctfshow/">
+                        <span class="chip bg-color">ctfshow</span>
                     </a>
                     
-                    <a href="/tags/%E8%93%9D%E9%98%9F/">
-                        <span class="chip bg-color">蓝队</span>
+                    <a href="/tags/%E5%88%B7%E9%A2%98/">
+                        <span class="chip bg-color">刷题</span>
                     </a>
                     
                 </div>
@@ -1021,7 +1011,7 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">38.7k</span>
+                        class="white-color">13.1k</span>
             
             
             
@@ -1107,7 +1097,7 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
 
 
 
-    <a href="mailto:1915342797@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:2468758380@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1117,7 +1107,7 @@ pip install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1915342979" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1915342979" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2468758380" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2468758380" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
