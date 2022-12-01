@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>记一次意外的挖洞</title>
+      <link href="/2022/12/01/2022-12-1-ji-yi-ci-yi-wai-de-wa-dong/"/>
+      <url>/2022/12/01/2022-12-1-ji-yi-ci-yi-wai-de-wa-dong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>本来吃完饭跟学弟聊了一会准备学习，想把专升本的资料发给学弟</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201222436106.png"></p><p>登陆上某个专升本机构后发现账号只能验证码登陆，结果只有修改密码，并且还要输入原来的密码</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201222529217.png"></p><p>我没设密码哪来的原始密码啊</p><p>然后就想着再找找 该说不说这网站是真卡…</p><p>结果卡着卡着 网站崩了</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201222706646.png"></p><p><strong>真的不关我事</strong></p><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>然后下面是一堆信息 比如数据库，阿里云OSS，redis啥的都有</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201222907935.png"></p><p>第一反应是利用</p><p>阿里云access key id直接登陆拿shell</p><p>结果access key id是空的</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201223033631.png"></p><p>数据库用户名密码倒是有 结果设置了本地登陆….</p><p>然后我就把目标转向了redis（好不容易省赛摸清楚第三阶段用redis直接一把梭，结果今年没有awd了….）</p><p>用老办法<code>redis-cli -h ip</code>行不通 百度搜了个<code>redis-cli -h ip -p 6379 -a password</code></p><p>结果密码里有个<code>&amp;</code>符号好像被转译了</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201223745218.png"></p><p>服了…</p><p>去百度搜了个redis客户端直接登陆</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201223909770.png"></p><p>太简单了有点拿不出手</p><p>光登陆好像没啥用 写shell</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201223959078.png"></p><p>命令行的图标太明显了</p><p>直接redis写webshell一把锁干就完了</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201224153290.png"></p><p>不敢写一句话木马 写个phpinfo证明漏洞存在就行了</p><p>不然机构狗急跳墙 让警察叔叔请我喝茶就不划算了</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201233358342.png"></p><p>漏洞已提交补天</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20221201232923979.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透测试 </tag>
+            
+            <tag> SRC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>发疯随记2022/11/1凌晨</title>
       <link href="/2022/11/01/fa-feng-sui-ji-1/"/>
       <url>/2022/11/01/fa-feng-sui-ji-1/</url>
