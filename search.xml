@@ -38,10 +38,18 @@
       
       <categories>
           
-          <category> 护网 - 护网 - 绿盟 </category>
+          <category> 护网 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 护网 </tag>
+            
+            <tag> 绿盟 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -52,7 +60,7 @@
       <link href="/2023/02/22/2023-02-22-kali-ping-bao-cuo-yu-ming-jie-xi-zan-shi-shi-bai/"/>
       <url>/2023/02/22/2023-02-22-kali-ping-bao-cuo-yu-ming-jie-xi-zan-shi-shi-bai/</url>
       
-        <content type="html"><![CDATA[<p>h</p><p>很久没更新了 今天打开kali想用xshell连接 发现ifconfig无法查看ip</p><p>下载go环境也报错</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20230221220500027.png"></p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20230221220541588.png" alt="image-20230221220541588"></p><p>刚开始找了几个教程让改个文件 路由啥的</p><p>没那么麻烦</p><p><a href="https://blog.csdn.net/IWANnaaa/article/details/123635323">(52条消息) kali无法ping通baidu.com_kali ping不通百度_KKKun’s的博客-CSDN博客</a></p><p><code>dhclient eth0</code>获取IP地址</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20230221220858547.png"></p>]]></content>
+        <content type="html"><![CDATA[<p>很久没更新了 今天打开kali想用xshell连接 发现ifconfig无法查看ip</p><p>下载go环境也报错</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20230221220500027.png"></p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20230221220541588.png" alt="image-20230221220541588"></p><p>刚开始找了几个教程让改个文件 路由啥的</p><p>没那么麻烦</p><p><a href="https://blog.csdn.net/IWANnaaa/article/details/123635323">(52条消息) kali无法ping通baidu.com_kali ping不通百度_KKKun’s的博客-CSDN博客</a></p><p><code>dhclient eth0</code>获取IP地址</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20230221220858547.png"></p>]]></content>
       
       
       <categories>
@@ -326,9 +334,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -503,9 +511,9 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> 笔记 </tag>
             
         </tags>
       
